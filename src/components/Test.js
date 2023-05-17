@@ -3,7 +3,7 @@ import { addDoc, collection } from "@firebase/firestore";
 
 const handleSubmit = (testdata) => {
     const ref = collection(db, "test_data") // Firebase creates this automatically
-
+// PUSH TO GITHUB AND DELETE THIS BRUH
     let data = {
         testData: testdata
     }
