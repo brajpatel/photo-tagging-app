@@ -18,7 +18,7 @@
 .sidebar {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: grid;
-  grid-template-rows: 7fr 1fr;
+  grid-template-rows: 9fr 1fr;
   justify-items: center;
   align-items: center;
 }
@@ -80,6 +80,17 @@
 
 .character-list li:hover > img {
   opacity: 1;
+}
+
+.link {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.2rem;
+  color: rgb(29, 43, 88);
+}
+
+.link i {
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
 }
 
 /* GAME */

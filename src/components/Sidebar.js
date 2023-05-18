@@ -22,7 +22,7 @@ function Sidebar(props) {
                     </ul>
                 </div>
             </div>
-            <a className="link" href="#" target="_blank">GITHUB</a>
+            <a className="link" href="https://github.com/brajpatel" target="_blank">Create by Brajesh<i class="fa-brands fa-github"></i></a>
         </div>
     )
 }
