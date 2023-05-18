@@ -14,7 +14,7 @@ function Sidebar(props) {
                         {charData.map((char) => {
                             return (
                                 <li key={char.id}>
-                                    <p>{char.name}<i class="fa-solid fa-image"></i></p>
+                                    <p>{char.name}<i className="fa-solid fa-image"></i></p>
                                     <img src={char.image}  alt={char.name}/>
                                 </li>
                             )
@@ -22,7 +22,7 @@ function Sidebar(props) {
                     </ul>
                 </div>
             </div>
-            <a className="link" href="https://github.com/brajpatel" target="_blank">Create by Brajesh<i class="fa-brands fa-github"></i></a>
+            <a className="link" href="https://github.com/brajpatel" target="_blank">Create by Brajesh<i className="fa-brands fa-github"></i></a>
         </div>
     )
 }
