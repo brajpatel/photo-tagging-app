@@ -2,7 +2,7 @@ import React from "react";
 
 function Game() {
     return (
-        <div>Game</div>
+        <div className="image-container">Game</div>
     )
 }
 

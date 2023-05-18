@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cousine&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* APP */
+.app {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* SIDEBAR */
+.sidebar {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-template-rows: 1fr 5rem;
+  justify-items: center;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar div:first-child {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
+}
+
+.current-time {
+  font-family: 'Cousine', sans-serif;
+  text-align: center;
+}
+
+.character-list {
+  font-family: 'Barlow', sans-serif;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* GAME */
+.image-container {
+  background: #efefef;
 }
