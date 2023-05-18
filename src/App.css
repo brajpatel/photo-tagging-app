@@ -48,4 +48,12 @@
 /* GAME */
 .image-container {
   background: #efefef;
+  padding: 1rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.game-image {
+  overflow: hidden;
+  width: 100%;
 }
