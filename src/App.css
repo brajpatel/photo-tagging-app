@@ -21,6 +21,7 @@
   grid-template-rows: 9fr 1fr;
   justify-items: center;
   align-items: center;
+  z-index: 1;
 }
 
 .sidebar div:first-child {
@@ -56,6 +57,10 @@
   display: flex;
   gap: 1rem;
   font-size: 1.2rem;
+}
+
+.character-list li.char-found {
+  color: rgb(0, 224, 0);
 }
 
 .character-list li > p > i {
@@ -96,14 +101,17 @@
 /* GAME */
 .image-container {
   background: #efefef;
-  padding: 1rem;
   overflow-x: hidden;
   overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .game-image {
   overflow: hidden;
-  width: 100%;
+  max-width: 950px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 area {
