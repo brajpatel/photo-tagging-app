@@ -3,7 +3,7 @@ import { Menu, MenuItem } from "@mui/material";
 import gameImage from "../assets/game-image.png";
 
 function Game(props) {
-    const { charData, setCharData } = props;
+    const { charData } = props;
 
     const [charsLeft, setCharsLeft] = useState(charData);
     const [anchorEl, setAnchorEl] = useState(null);

@@ -8,7 +8,7 @@ import link from "./assets/link.png";
 import noFace from "./assets/no-face.png";
 import aang from "./assets/aang.png";
 
-const data = [
+const charData = [
   {
     name: 'Diane',
     id: 'diane',
@@ -42,12 +42,10 @@ const data = [
 ]
 
 function App() {
-  const [charData, setCharData] = useState(data);
-
   return (
     <div className="app">
       <Sidebar charData={charData}/>
-      <Game charData={charData} setCharData={setCharData}/>
+      <Game charData={charData}/>
     </div>
   );
 }
