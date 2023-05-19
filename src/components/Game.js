@@ -1,11 +1,31 @@
-import React from "react";
-import { Menu, MenuItem } from "@mui/material";
+import React, { useState } from "react";
+import { Menu, MenuItem, useScrollTrigger } from "@mui/material";
 import gameImage from "../assets/game-image.png";
 
-function Game() {
+function Game(props) {
+    const { charData } = props;
+
+    const [charsLeft, setCharsLeft] = useState(charData);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [clicked, setClicked] = useState(null);
 
     const openMenu = (e) => {
-        if(e.target.id) alert(e.target.id)
+        // const selectedArea = document.createElement('div');
+        // selectedArea.setAttribute('id', 'selection-div');
+        // selectedArea.classList.add('selected-area');
+        // selectedArea.style.left = e.pageX - 50 + 'px';
+        // selectedArea.style.top = e.pageY - 50 + 'px';
+
+        // document.body.appendChild(selectedArea);
+        // setAnchorEl(selectedArea);
+
+        if(e.target.id) setClicked(e.target.id);
+    }
+
+    const closeMenu = (charId) => {
+        const selectedArea = document.getElementById('selection-div');
+        selectedArea.parentNode.removeChild(selectedArea);
+        setAnchorEl(null);
     }
 
     return (
@@ -64,6 +84,29 @@ function Game() {
                     onClick={openMenu}
                 />
             </map>
+            <Menu
+                id="chars-left-menu"
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={closeMenu}
+                anchorOrigin={{
+                    horizontal: "right",
+                    vertical: "center"
+                }}
+                transitionOrigin={{
+                    horizontal: "left",
+                    vertical: "center"
+                }}
+                keepMounted
+            >
+                {charsLeft.map((char) => {
+                    return (
+                        <MenuItem key={char.id} data-id={char.id} onClick={() => closeMenu(char.id)}>
+                            {char.name}
+                        </MenuItem>
+                    )
+                })}
+            </Menu>
         </div>
     )
 }

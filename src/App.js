@@ -45,7 +45,7 @@ function App() {
   return (
     <div className="app">
       <Sidebar charData={charData}/>
-      <Game/>
+      <Game charData={charData}/>
     </div>
   );
 }
