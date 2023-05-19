@@ -12,32 +12,27 @@ const charData = [
   {
     name: 'Diane',
     id: 'diane',
-    image: diane,
-    found: false
+    image: diane
   },
   {
     name: 'Patrick',
     id: 'patrick',
-    image: patrick,
-    found: false
+    image: patrick
   },
   {
     name: 'Link',
     id: 'link',
-    image: link,
-    found: false
+    image: link
   },
   {
     name: 'No Face',
     id: 'no-face',
-    image: noFace,
-    found: false
+    image: noFace
   },
   {
     name: 'Aang',
     id: 'aang',
-    image: aang,
-    found: false
+    image: aang
   },
 ]
 
