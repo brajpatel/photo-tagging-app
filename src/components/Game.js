@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Menu, MenuItem, useScrollTrigger } from "@mui/material";
+import { Menu, MenuItem } from "@mui/material";
 import gameImage from "../assets/game-image.png";
 
 function Game(props) {
-    const { charData } = props;
+    const { charData, setCharData } = props;
 
     const [charsLeft, setCharsLeft] = useState(charData);
     const [anchorEl, setAnchorEl] = useState(null);
@@ -23,6 +23,14 @@ function Game(props) {
     }
 
     const closeMenu = (charId) => {
+        if(charId === clicked) {
+            const charFound = document.querySelector(`.${charId}`);
+            charFound.classList.add('char-found');
+            
+            const updatedCharsLeft = charsLeft.filter((char) => char.id !== charId);
+            setCharsLeft(updatedCharsLeft);
+        }
+
         const selectedArea = document.getElementById('selection-div');
         selectedArea.parentNode.removeChild(selectedArea);
         setAnchorEl(null);
@@ -93,7 +101,7 @@ function Game(props) {
                     horizontal: "right",
                     vertical: "center"
                 }}
-                transitionOrigin={{
+                transformOrigin={{
                     horizontal: "left",
                     vertical: "center"
                 }}

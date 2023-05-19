@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Game from './components/Game';
 import diane from "./assets/diane.png";
@@ -8,7 +8,7 @@ import link from "./assets/link.png";
 import noFace from "./assets/no-face.png";
 import aang from "./assets/aang.png";
 
-const charData = [
+const data = [
   {
     name: 'Diane',
     id: 'diane',
@@ -42,10 +42,12 @@ const charData = [
 ]
 
 function App() {
+  const [charData, setCharData] = useState(data);
+
   return (
     <div className="app">
       <Sidebar charData={charData}/>
-      <Game charData={charData}/>
+      <Game charData={charData} setCharData={setCharData}/>
     </div>
   );
 }

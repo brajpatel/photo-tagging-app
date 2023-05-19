@@ -13,7 +13,7 @@ function Sidebar(props) {
                     <ul className="character-list">
                         {charData.map((char) => {
                             return (
-                                <li key={char.id} className={char.found ? "char-found" : null}>
+                                <li key={char.id} className={char.id}>
                                     <p>{char.name}<i className="fa-solid fa-image"></i></p>
                                     <img src={char.image}  alt={char.name}/>
                                 </li>
