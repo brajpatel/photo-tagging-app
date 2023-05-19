@@ -10,14 +10,14 @@ function Game(props) {
     const [clicked, setClicked] = useState(null);
 
     const openMenu = (e) => {
-        // const selectedArea = document.createElement('div');
-        // selectedArea.setAttribute('id', 'selection-div');
-        // selectedArea.classList.add('selected-area');
-        // selectedArea.style.left = e.pageX - 50 + 'px';
-        // selectedArea.style.top = e.pageY - 50 + 'px';
+        const selectedArea = document.createElement('div');
+        selectedArea.setAttribute('id', 'selection-div');
+        selectedArea.classList.add('selected-area');
+        selectedArea.style.left = e.pageX - 50 + 'px';
+        selectedArea.style.top = e.pageY - 50 + 'px';
 
-        // document.body.appendChild(selectedArea);
-        // setAnchorEl(selectedArea);
+        document.body.appendChild(selectedArea);
+        setAnchorEl(selectedArea);
 
         if(e.target.id) setClicked(e.target.id);
     }
