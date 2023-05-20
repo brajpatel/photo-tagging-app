@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Menu, MenuItem } from "@mui/material";
 import gameImage from "../assets/game-image.png";
+import GameStart from "./GameStart";
 
 function Game(props) {
     const { charData } = props;
 
+    const [showGameStart, setShowGameStart] = useState(true);
     const [charsLeft, setCharsLeft] = useState(charData);
     const [anchorEl, setAnchorEl] = useState(null);
     const [clicked, setClicked] = useState(null);
@@ -38,7 +40,7 @@ function Game(props) {
 
     return (
         <div className="image-container">
-            {/* SHOW GAME START */}
+            {showGameStart ? <GameStart/> : null}
             {/* SHOW GAME END */}
             <img
             className="game-image"
