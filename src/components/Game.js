@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Menu, MenuItem } from "@mui/material";
 import gameImage from "../assets/game-image.png";
 import GameStart from "./GameStart";
