@@ -37,6 +37,7 @@ const charData = [
 ]
 
 function App() {
+  const [playerName, setPlayerName] = useState('');
   const [timerActive, setTimerActive] = useState(false);
   const [timerPaused, setTimerPaused] = useState(true);
   const [time, setTime] = useState(0);
@@ -62,7 +63,7 @@ function App() {
   return (
     <div className="app">
       <Sidebar time={time} charData={charData}/>
-      <Game setTimerActive={setTimerActive} setTimerPaused={setTimerPaused} charData={charData}/>
+      <Game setPlayerName={setPlayerName} setTimerActive={setTimerActive} setTimerPaused={setTimerPaused} charData={charData}/>
     </div>
   );
 }

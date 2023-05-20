@@ -4,7 +4,7 @@ import gameImage from "../assets/game-image.png";
 import GameStart from "./GameStart";
 
 function Game(props) {
-    const { setTimerActive, setTimerPaused, charData } = props;
+    const { setPlayerName, setTimerActive, setTimerPaused, charData } = props;
 
     const [showGameStart, setShowGameStart] = useState(true);
     const [charsLeft, setCharsLeft] = useState(charData);
@@ -12,6 +12,9 @@ function Game(props) {
     const [clicked, setClicked] = useState(null);
 
     const startGame = (playerName) => {
+        let name = playerName.slice(0, 1).toUpperCase()  + playerName.slice(1);
+        setPlayerName(name);
+
         setShowGameStart(false);
         setTimerActive(true);
         setTimerPaused(false);
@@ -42,6 +45,10 @@ function Game(props) {
         const selectedArea = document.getElementById('selection-div');
         selectedArea.parentNode.removeChild(selectedArea);
         setAnchorEl(null);
+
+        if(charsLeft.length <= 1) {
+            setTimerPaused(true);
+        }
     }
 
     return (
