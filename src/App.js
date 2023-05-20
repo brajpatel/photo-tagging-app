@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Game from './components/Game';
 import diane from "./assets/diane.png";
@@ -37,9 +37,31 @@ const charData = [
 ]
 
 function App() {
+  const [timerActive, setTimerActive] = useState(false);
+  const [timerPaused, setTimerPaused] = useState(true);
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    let interval = null;
+
+    if(timerActive && timerPaused === false) {
+      interval = setInterval(() => {
+        setTime((time) => time + 10);
+      }, 10);
+    }
+    else {
+      clearInterval(interval);
+    }
+
+    return (() => {
+      clearInterval(interval);
+    })
+
+  }, [timerActive, timerPaused])
+
   return (
     <div className="app">
-      <Sidebar charData={charData}/>
+      <Sidebar time={time} charData={charData}/>
       <Game charData={charData}/>
     </div>
   );

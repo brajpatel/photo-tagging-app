@@ -1,12 +1,12 @@
 import Timer from "./Timer";
 
 function Sidebar(props) {
-    const { charData } = props;
+    const { time, charData } = props;
 
     return (
         <div className="sidebar">
             <div>
-                <Timer/>
+                <Timer time={time}/>
                 <div className="character-list-container">
                     <h2>Characters to find:</h2>
                     <ul className="character-list">
