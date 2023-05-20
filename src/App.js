@@ -46,7 +46,7 @@ function App() {
 
     if(timerActive && timerPaused === false) {
       interval = setInterval(() => {
-        setTime((time) => time + 10);
+        setTime((time) => time + 20);
       }, 10);
     }
     else {
@@ -62,7 +62,7 @@ function App() {
   return (
     <div className="app">
       <Sidebar time={time} charData={charData}/>
-      <Game charData={charData}/>
+      <Game setTimerActive={setTimerActive} setTimerPaused={setTimerPaused} charData={charData}/>
     </div>
   );
 }

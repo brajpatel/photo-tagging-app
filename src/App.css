@@ -202,7 +202,7 @@ area {
 }
 
 .game-start form > input:focus {
-  background: #e1e1e1;
+  background: #eeeeee;
 }
 
 .game-start form > button:disabled {

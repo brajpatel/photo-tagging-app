@@ -4,12 +4,18 @@ import gameImage from "../assets/game-image.png";
 import GameStart from "./GameStart";
 
 function Game(props) {
-    const { charData } = props;
+    const { setTimerActive, setTimerPaused, charData } = props;
 
     const [showGameStart, setShowGameStart] = useState(true);
     const [charsLeft, setCharsLeft] = useState(charData);
     const [anchorEl, setAnchorEl] = useState(null);
     const [clicked, setClicked] = useState(null);
+
+    const startGame = (playerName) => {
+        setShowGameStart(false);
+        setTimerActive(true);
+        setTimerPaused(false);
+    }
 
     const openMenu = (e) => {
         const selectedArea = document.createElement('div');
@@ -40,7 +46,7 @@ function Game(props) {
 
     return (
         <div className="image-container">
-            {showGameStart ? <GameStart/> : null}
+            {showGameStart ? <GameStart startGame={startGame}/> : null}
             {/* SHOW GAME END */}
             <img
             className="game-image"
