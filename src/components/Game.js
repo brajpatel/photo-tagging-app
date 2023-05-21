@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Menu, MenuItem } from "@mui/material";
 import gameImage from "../assets/game-image.png";
 import GameStart from "./GameStart";
+import GameEnd from "./GameEnd";
 
 function Game(props) {
-    const { setPlayerName, setTimerActive, setTimerPaused, charData } = props;
+    const { setPlayerName, setTimerActive, setTimerPaused, time, charData } = props;
 
     const [showGameStart, setShowGameStart] = useState(true);
+    const [showGameEnd, setShowGameEnd] = useState(false);
     const [charsLeft, setCharsLeft] = useState(charData);
     const [anchorEl, setAnchorEl] = useState(null);
     const [clicked, setClicked] = useState(null);
@@ -53,8 +55,8 @@ function Game(props) {
 
     return (
         <div className="image-container">
-            {showGameStart ? <GameStart startGame={startGame}/> : null}
-            {/* SHOW GAME END */}
+            {!showGameStart ? <GameStart startGame={startGame}/> : null}
+            {!showGameEnd ? <GameEnd time={time}/> : null}
             <img
             className="game-image"
             aria-controls="simple-menu"

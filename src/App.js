@@ -62,8 +62,17 @@ function App() {
 
   return (
     <div className="app">
-      <Sidebar time={time} charData={charData}/>
-      <Game setPlayerName={setPlayerName} setTimerActive={setTimerActive} setTimerPaused={setTimerPaused} charData={charData}/>
+      <Sidebar
+        time={time}
+        charData={charData}
+      />
+      <Game
+        setPlayerName={setPlayerName}
+        setTimerActive={setTimerActive}
+        setTimerPaused={setTimerPaused}
+        time={time}
+        charData={charData}
+      />
     </div>
   );
 }

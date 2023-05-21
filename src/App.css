@@ -31,9 +31,10 @@
   gap: 1rem;
 }
 
-.current-time {
+.time {
   font-family: 'Cousine', sans-serif;
   text-align: center;
+  font-size: 1.1rem;
 }
 
 .character-list-container {
@@ -162,7 +163,7 @@ area {
 .game-start {
   padding: 1.2rem 1.4rem;
   gap: 0.6rem;
-  max-width: 400px;
+  max-width: 450px;
   text-align: center;
 }
 
