@@ -1,4 +1,4 @@
-function Timer(props) {
+function Time(props) {
     const { time } = props;
 
     return (
@@ -11,4 +11,4 @@ function Timer(props) {
     )
 }
 
-export default Timer;
+export default Time;

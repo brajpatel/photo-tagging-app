@@ -5,8 +5,9 @@ import GameStart from "./GameStart";
 import GameEnd from "./GameEnd";
 
 function Game(props) {
-    const { setPlayerName, setTimerActive, setTimerPaused, time, charData } = props;
+    const { setTimerActive, setTimerPaused, time, charData } = props;
 
+    const [playerName, setPlayerName] = useState('');
     const [showGameStart, setShowGameStart] = useState(true);
     const [showGameEnd, setShowGameEnd] = useState(false);
     const [charsLeft, setCharsLeft] = useState(charData);
@@ -56,7 +57,7 @@ function Game(props) {
     return (
         <div className="image-container">
             {!showGameStart ? <GameStart startGame={startGame}/> : null}
-            {!showGameEnd ? <GameEnd time={time}/> : null}
+            {!showGameEnd ? <GameEnd playerName={playerName} time={time}/> : null}
             <img
             className="game-image"
             aria-controls="simple-menu"

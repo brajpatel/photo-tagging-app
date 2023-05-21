@@ -1,4 +1,4 @@
-import Timer from "./Timer";
+import Timer from "./Time";
 
 function Sidebar(props) {
     const { time, charData } = props;

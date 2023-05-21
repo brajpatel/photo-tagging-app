@@ -37,7 +37,6 @@ const charData = [
 ]
 
 function App() {
-  const [playerName, setPlayerName] = useState('');
   const [timerActive, setTimerActive] = useState(false);
   const [timerPaused, setTimerPaused] = useState(true);
   const [time, setTime] = useState(0);
@@ -67,7 +66,6 @@ function App() {
         charData={charData}
       />
       <Game
-        setPlayerName={setPlayerName}
         setTimerActive={setTimerActive}
         setTimerPaused={setTimerPaused}
         time={time}

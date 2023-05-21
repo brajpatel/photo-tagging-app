@@ -1,24 +1,24 @@
-import Timer from "./Timer";
+import Time from "./Time";
 
 function GameEnd(props) {
-    const { time } = props;
+    const { playerName, time } = props;
 
     return (
         <div className="overlay">
             <div className="game-message game-end">
                 <div>
-                    <p>Great work Buh, you found all the characters!</p>
-                    <Timer time={time}/>
+                    <p>Great work {playerName}, you found all the characters!</p>
+                    <Time time={time}/>
                     <button type="button" onClick={() => window.location.reload()}>Play Again</button>
                 </div>
                 <div className="fastest-times">
                     <p>Fastest Times:</p>
                     <ol>
-                        <li>top</li>
-                        <li>5</li>
-                        <li>times</li>
-                        <li>go</li>
-                        <li>here</li>
+                        <li>Name - Top</li>
+                        <li>Name - 5</li>
+                        <li>Name - times</li>
+                        <li>Name - go</li>
+                        <li>Name - here</li>
                     </ol>
                 </div>
             </div>
