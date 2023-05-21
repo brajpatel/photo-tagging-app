@@ -50,14 +50,16 @@ function Game(props) {
         setAnchorEl(null);
 
         if(charsLeft.length <= 1) {
+            setTimerActive(false);
             setTimerPaused(true);
+            setShowGameEnd(true);
         }
     }
 
     return (
         <div className="image-container">
-            {!showGameStart ? <GameStart startGame={startGame}/> : null}
-            {!showGameEnd ? <GameEnd playerName={playerName} time={time}/> : null}
+            {showGameStart ? <GameStart startGame={startGame}/> : null}
+            {showGameEnd ? <GameEnd playerName={playerName} time={time}/> : null}
             <img
             className="game-image"
             aria-controls="simple-menu"

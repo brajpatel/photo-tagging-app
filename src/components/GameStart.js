@@ -15,12 +15,12 @@ function GameStart(props) {
     return (
         <div className="overlay">
             <div className="game-message game-start">
-                <h1>Where's Waldo?<i class="fa-solid fa-magnifying-glass"></i></h1>
-                <p>Please enter your name below. The timer will begin as soon as you click play</p>
+                <h1>Where's... Waldo?<i class="fa-solid fa-magnifying-glass"></i></h1>
+                <p>Please enter your name below. The timer will begin as soon as you click the start button</p>
                 <p>You can put your cursor over the name of a character to see what they look like</p>
                 <form onSubmit={() => startGame(name)}>
                     <input onInput={handleName} placeholder="Enter your name here" type="text" autoFocus/>
-                    <button type="submit" disabled={disabled}>Play</button>
+                    <button type="submit" disabled={disabled}>Start Game</button>
                 </form>
             </div>
         </div>
