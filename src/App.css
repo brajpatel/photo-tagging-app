@@ -150,6 +150,20 @@ area {
   background: white;
   border-radius: 3px;
   font-family: 'barlow', sans-serif;
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .game-message button {
@@ -225,7 +239,7 @@ area {
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
-  padding: 1.6rem 0.5rem;
+  padding: 2rem 0.5rem;
   gap: 0.5rem;
 }
 
