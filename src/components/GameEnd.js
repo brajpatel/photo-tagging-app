@@ -1,7 +1,7 @@
 import Time from "./Time";
 
 function GameEnd(props) {
-    const { playerName, time } = props;
+    const { playerName, time, fastestTimes } = props;
 
     return (
         <div className="overlay">
@@ -9,16 +9,20 @@ function GameEnd(props) {
                 <div>
                     <p>Great work {playerName}, you found all the characters!</p>
                     <Time time={time}/>
+                    <p>See if you managed to get your name on the leaderboard!</p>
                     <button type="button" onClick={() => window.location.reload()}>Play Again</button>
                 </div>
-                <div className="fastest-times">
-                    <p>Fastest Times:</p>
+                <div className="leaderboard">
+                    <p>Leaderboard:</p>
                     <ol>
-                        <li>Name - Top</li>
-                        <li>Name - 5</li>
-                        <li>Name - times</li>
-                        <li>Name - go</li>
-                        <li>Name - here</li>
+                        {fastestTimes.map((item) => {
+                            return (
+                                <li>
+                                    <p>{item.name}</p>
+                                    <p>{item.time}</p>    
+                                </li>
+                            )
+                        })}
                     </ol>
                 </div>
             </div>

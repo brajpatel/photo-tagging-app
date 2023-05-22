@@ -1,3 +1,5 @@
+import { addDoc, collection, query, orderBy, limit, getDocs } from "@firebase/firestore";
+import { db } from "../firebase_setup/firebase";
 import { useState } from "react";
 import { Menu, MenuItem } from "@mui/material";
 import gameImage from "../assets/game-image.png";
@@ -13,6 +15,7 @@ function Game(props) {
     const [charsLeft, setCharsLeft] = useState(charData);
     const [anchorEl, setAnchorEl] = useState(null);
     const [clicked, setClicked] = useState(null);
+    const [fastestTimes, setFastestTimes] = useState([]);
 
     const startGame = (playerName) => {
         let name = playerName.slice(0, 1).toUpperCase()  + playerName.slice(1);
@@ -50,16 +53,51 @@ function Game(props) {
         setAnchorEl(null);
 
         if(charsLeft.length <= 1) {
-            setTimerActive(false);
-            setTimerPaused(true);
-            setShowGameEnd(true);
+            endGame();
         }
+    }
+
+    const endGame = async () => {
+        setTimerActive(false);
+        setTimerPaused(true);
+
+        let minutes = ("0" + Math.floor((time / 60000) % 60)).slice(-2);
+        let seconds = ("0" + Math.floor((time / 1000) % 60)).slice(-2);
+        let miliseconds = ("0" + ((time / 10) % 100)).slice(-2);
+        let timeString = minutes + ':' + seconds + '.' + miliseconds;
+
+        // reference the collection
+        const ref = collection(db, "test_data");
+
+        // store the new time
+        let gameData = {
+            name: playerName,
+            time: timeString
+        }
+        try {
+            addDoc(ref, gameData);
+        }
+        catch(err) {
+            throw(err);
+        }
+
+        // retrieve the top 5 times
+        let updatedFastestTimes = fastestTimes;
+        const q = query(ref, orderBy('time'), limit(5));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            let data = doc.data();
+            updatedFastestTimes.push(data);
+        })
+        setFastestTimes(updatedFastestTimes);
+
+        setShowGameEnd(true);
     }
 
     return (
         <div className="image-container">
             {showGameStart ? <GameStart startGame={startGame}/> : null}
-            {showGameEnd ? <GameEnd playerName={playerName} time={time}/> : null}
+            {showGameEnd ? <GameEnd playerName={playerName} time={time} fastestTimes={fastestTimes}/> : null}
             <img
             className="game-image"
             aria-controls="simple-menu"
