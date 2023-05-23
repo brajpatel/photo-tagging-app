@@ -67,7 +67,7 @@ function Game(props) {
         let timeString = minutes + ':' + seconds + '.' + miliseconds;
 
         // reference the collection
-        const ref = collection(db, "test_data");
+        const ref = collection(db, "fastest_times");
 
         // store the new time
         let gameData = {

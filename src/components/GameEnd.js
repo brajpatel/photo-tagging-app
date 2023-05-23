@@ -17,7 +17,7 @@ function GameEnd(props) {
                     <ol>
                         {fastestTimes.map((item) => {
                             return (
-                                <li>
+                                <li key={item.name}>
                                     <p>{item.name}</p>
                                     <p>{item.time}</p>    
                                 </li>
