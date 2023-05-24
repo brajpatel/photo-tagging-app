@@ -46,7 +46,7 @@ function App() {
 
     if(timerActive && timerPaused === false) {
       interval = setInterval(() => {
-        setTime((time) => time + 20);
+        setTime((time) => time + 10);
       }, 10);
     }
     else {
