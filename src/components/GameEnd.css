@@ -1,0 +1,55 @@
+.game-end {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    padding: 2rem 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .game-end div:first-child,
+  .leaderboard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.4rem;
+  }
+  
+  .game-end div:first-child {
+    width: 90%;
+    text-align: center;
+  }
+  
+  .game-end .time {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  .leaderboard {
+    border-left: 1px solid black;
+  }
+  
+  .leaderboard p:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .leaderboard ol {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .leaderboard ol > li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .leaderboard ol > li:first-child {
+    color: rgb(236, 202, 9);
+  }

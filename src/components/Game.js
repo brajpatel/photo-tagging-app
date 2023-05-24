@@ -1,3 +1,4 @@
+import "./Game.css";
 import { addDoc, collection, query, orderBy, limit, getDocs } from "@firebase/firestore";
 import { db } from "../firebase_setup/firebase";
 import { useState } from "react";

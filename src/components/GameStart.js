@@ -1,3 +1,4 @@
+import "./GameStart.css";
 import { useState } from "react";
 
 function GameStart(props) {

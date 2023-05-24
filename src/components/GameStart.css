@@ -1,0 +1,52 @@
+.game-start {
+    padding: 1.2rem 1.4rem;
+    gap: 0.8rem;
+    max-width: 450px;
+    text-align: center;
+  }
+  
+  .game-start,
+  .game-start form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .game-start h1 {
+    border-bottom: 3px solid black;
+    padding-bottom: 0.6rem;
+    width: 100%;
+  }
+  
+  .game-start h1 > i {
+    margin-left: 0.5rem;
+  }
+  
+  .game-start p {
+    font-size: 1.4rem;
+  }
+  
+  .game-start form {
+    font-size: 1.5rem;
+    gap: 0.6rem;
+  }
+  
+  .game-start form > input {
+    padding: 8px 6px;
+    font-size: 1.4rem;
+    outline: none;
+    text-align: center;
+    border: 1px solid grey;
+    font-family: 'barlow', sans-serif;
+  }
+  
+  .game-start form > input:focus {
+    background: #eeeeee;
+  }
+  
+  .game-start form > button:disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+    user-select: none;
+  }

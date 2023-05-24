@@ -1,3 +1,4 @@
+import "./Sidebar.css";
 import Timer from "./Time";
 
 function Sidebar(props) {
@@ -21,7 +22,7 @@ function Sidebar(props) {
                     </ul>
                 </div>
             </div>
-            <a className="link" href="https://github.com/brajpatel" target="_blank">Create by Brajesh<i className="fa-brands fa-github"></i></a>
+            <a className="link" href="https://github.com/brajpatel" target="_blank">Created by Brajesh<i className="fa-brands fa-github"></i></a>
         </div>
     )
 }

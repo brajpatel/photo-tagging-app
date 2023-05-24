@@ -1,3 +1,4 @@
+import "./GameEnd.css";
 import Time from "./Time";
 
 function GameEnd(props) {
